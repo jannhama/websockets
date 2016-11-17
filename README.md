@@ -80,4 +80,4 @@ the server.
 
 #### License
 
-&copy; 2016 Janne Hämäläinen, released under MIT license.
+&copy; 2016 Janne Hämäläinen. Released under [MIT](https://opensource.org/licenses/MIT) license.
