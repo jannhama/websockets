@@ -1,4 +1,4 @@
-# nodejs-websocket
+# Websockets
 
 This is simple starter project to get you familiar with websocket server from (ws) package.
 Project includes also simple client where you can try out different data transfer modes (binary/text).
@@ -40,6 +40,42 @@ Text format:
 
 
 ## Client
+
+
+Key part of the client is the socket event handler - similar way as it was in
+the server.
+
+```
+    function onMessage(event) {
+        console.log("Message is received...");
+        addText("clientmessages", "Message is received...\n");
+
+        if (event.data instanceof ArrayBuffer) {
+            var byteArray = new Uint8Array(event.data);
+
+            if (byteArray.length == buffer.length) {
+                buffer.set(byteArray);
+            }
+
+            for (var i = 0; i < byteArray.length; i++) {
+                addText("clientmessages", "read:" + byteArray[i].toString(16) + "\n");
+                console.log(byteArray[i]);
+            }
+            addText("clientmessages", "End of message\n");
+            console.log("End of binary message");
+        }
+        else if (event.data instanceof Blob) {
+            addText("clientmessages", "We received blob!\n");
+        }
+
+        else {
+            addText("clientmessages", "We received something, but it is not binary. Assuming text!\n");
+            addText("clientmessages", event.data);
+            console.log(event.data);
+        }
+    }
+
+```
 
 
 #### License
