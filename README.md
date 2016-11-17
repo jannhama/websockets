@@ -9,6 +9,13 @@ Project includes also simple client where you can try out different data transfe
 * Start server using ```node server.js```
 * Open client from ```web-client folder``` by opening ```index.html``` in your browser.
 
+## Technologies used
+
+* NodeJS & ws websockets
+* JQuery in the UI
+* Bootstrap in the UI
+* ES5 i.e. "normal" javascript
+
 ## Server
 
 Socket uses ws NPM package that is one of the most common ones for websocket usage.
