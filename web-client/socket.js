@@ -1,7 +1,8 @@
 /**
  * Simple client side websocket handler
- *
- */
+ * Author: Janne Hämäläinen
+ * Twitter: @JanneHamalainen
+*/
 
 
 var socketHandler = (function(){
@@ -11,29 +12,31 @@ var socketHandler = (function(){
     var ws = null;
     var buffer = new Uint8Array(10);
 
+    // add button click handlers with jquery
     function addHandlers() {
-        //$("#connect").click(connectClick);
+        $("#connect").click(connectClick);
         $("#disconnect").click(disconnectClick);
         $("#send01").click(send01Click);
         $("#send02").click(send02Click);
         $("#send03").click(send03Click);
         $("#sendtext").click(sendTextClick);
-
-        $('#connect').on('click', connectClick);
     }
 
+    // clear buffer
     function initBuffer(buffer, param) {
         var i;
         for (i = 0; i < buffer.length - 1; i++) {
             buffer[i] = 0x00;
         }
+        // set param to the first byte
         buffer[0] = param;
     }
 
-
+    // connect to websocket server
     function connectClick() {
-        if ("WebSocket" in window) {
 
+        // check if we have websockets available
+        if ("WebSocket" in window) {
             ip = document.getElementById('ipaddress').value;
             port = document.getElementById('portnumber').value;
 
@@ -100,6 +103,7 @@ var socketHandler = (function(){
         console.log("Message is received...");
         addText("clientmessages", "Message is received...\n");
 
+        // check if we received a arraybuffer
         if (event.data instanceof ArrayBuffer) {
             var byteArray = new Uint8Array(event.data);
 
@@ -114,10 +118,11 @@ var socketHandler = (function(){
             addText("clientmessages", "End of message\n");
             console.log("End of binary message");
         }
+        // or blob was received
         else if (event.data instanceof Blob) {
             addText("clientmessages", "We received blob!\n");
         }
-
+        // otherwise it should be text
         else {
             addText("clientmessages", "We received something, but it is not binary. Assuming text!\n");
             addText("clientmessages", event.data);
@@ -129,6 +134,7 @@ var socketHandler = (function(){
         addText("clientmessages", "Error occured!\n");
     }
 
+    // add text to the text area
     function addText(elId, text) {
         document.getElementById(elId).value += text;
     }
@@ -136,7 +142,7 @@ var socketHandler = (function(){
 
     // API
     return {
-        addHandlers
+        addHandlers: addHandlers
     }
 
 

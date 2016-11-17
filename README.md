@@ -7,7 +7,7 @@ Project includes also simple client where you can try out different data transfe
 
 * Clone or download. run ```npm install``` in project folder.
 * Start server using ```node server.js```
-* Open client from ```web-client folder``` by opening ```ws_client.html``` in your browser.
+* Open client from ```web-client folder``` by opening ```index.html``` in your browser.
 
 ## Server
 
