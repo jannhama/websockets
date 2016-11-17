@@ -4,24 +4,24 @@
   "description": "Simple nodejs and browser webscoket demo",
   "main": "server.js",
   "scripts": {
-    "test": "test",
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jannhama/nodejs-websocket.git"
+    "url": "git+https://github.com/jannhama/websockets.git"
   },
   "keywords": [
     "websocket",
     "nodejs",
-    "html5"
+    "html5",
+    "jquery"
   ],
   "author": "Janne Hämäläinen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jannhama/nodejs-websocket/issues"
+    "url": "https://github.com/jannhama/websockets/issues"
   },
-  "homepage": "https://github.com/jannhama/nodejs-websocket#readme",
+  "homepage": "https://github.com/jannhama/websockets#readme",
   "dependencies": {
     "bootstrap": "^3.3.7",
     "jquery": "^3.1.1",
