@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <script src="../node_modules/jquery/dist/jquery.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <script src="socket.js"></script>
+        <script>
+            $(document).ready(function () {
+                socketHandler.addHandlers();
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="col-xs-12 col-md-6 col-lg-12">
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-5 col-lg-4">
+                        <label for="ipaddress">
+                            ip address
+                        </label>
+                        <input name="ipaddress" type="text" id="ipaddress" value="127.0.0.1">
+                    </div>
+                    <div class="col-xs-12 col-md-7 col-lg-8">
+                        <label for="portnumber">
+                            port number
+                        </label>
+                        <input name="portnumber" type="text" id="portnumber" value="9982">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-12 col-lg-12">
+                        <label for="clientmessages">
+                            <div>Client messages</div>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+                        <textarea name="clientmessages" rows="20" id="clientmessages" cols="50"></textarea>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="btn-group">
+                        <button class="col-xs-12 col-sm-6 btn btn-default" id="connect">
+                            Connect
+                        </button>
+                        <button class="col-xs-12 col-sm-6 btn btn-default" id="disconnect">
+                            Disconnect
+                        </button>
+                        <button class="col-xs-12 col-sm-6 btn btn-default" id="send01">
+                            Send 01
+                        </button>
+                        <button class="col-xs-12 col-sm-6 btn btn-default" id="send02">
+                            Send 02
+                        </button>
+                        <button class="col-xs-12 col-sm-6 btn btn-default" id="send03">
+                            Send unknown
+                        </button>
+                        <button class="col-xs-12 col-sm-6 btn btn-default" id="sendtext">
+                            Send text
+                        </button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <p>&nbsp;</p>
+    </body>
+</html>
